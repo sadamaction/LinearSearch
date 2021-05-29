@@ -1,0 +1,59 @@
+public class LinearSearch {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    
+    
+
+
+    Mahasiswa[] listMahasiswa = {
+      new Mahasiswa("1302023", "Yongki Aribowo", "Sukabumi"),
+      new Mahasiswa("1302024", "Yanah Nurhasanah", "Bogor"),
+      new Mahasiswa("1302025", "Cinta Agusalim", "Malang"),
+      new Mahasiswa("1302026", "Robi Irawan", "Kediri"),
+      new Mahasiswa("1302027", "Hendi Kusuma", "Surabaya"),
+      new Mahasiswa("1302028", "Galang Gustian", "Bandung")
+    };
+
+    search(listMahasiswa, "Hendi");
+
+  }
+
+  public static void search(Mahasiswa[] mahasiswa, String keyword) {
+    boolean ditemukan = false;
+    for (int i = 0; i < mahasiswa.length; i++) {
+
+      if (mahasiswa[i].nama.toLowerCase().contains(keyword.toLowerCase())) {
+        ditemukan = true;
+        System.out.println(
+            mahasiswa[i].nim + " - "
+            + mahasiswa[i].nama + " - " 
+            + mahasiswa[i].alamat + " - "
+            + "Data nomor " + (i + 1)
+        );
+      }
+
+    }
+
+    if (!ditemukan) {
+      System.out.println("Data yg anda cari tidak ditemukan");
+    }
+
+  }
+}
+
+class Mahasiswa {
+  String nim;
+  String nama;
+  String alamat;
+
+  public Mahasiswa(String nim, String nama, String alamat) {
+    this.nim = nim;
+    this.nama = nama;
+    this.alamat = alamat;
+  }
+}
+
